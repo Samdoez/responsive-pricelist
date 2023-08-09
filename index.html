@@ -1,0 +1,132 @@
+<!-- this is my code below-->
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Flexbox Pricing Table</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Sono', sans-serif;
+      font-size: 1.5rem;
+    }
+    .pricing-container{
+      background-color: rgb(255, 214, 148);
+      height: 100vh;
+      display: flex; /*here am using flex methods to style it better*/
+      gap: 5px;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center !important;
+      
+      /*if i dont include this flex-wrap: wrap; code,  the boxes will always want to all be on a straight line and in doing
+      that they go out of the container div and it dosent look great*/
+      flex-wrap: wrap; /*i am using flex wrap: wrap;  bcoz from screensizes of 1310px and below the boxes bcome
+      to big for the container div to arrange all its child (items boxes on a straightline), then this line of code starts to 
+      work..... Where the 3rd child div (box) wraps to the next line and its still centered */
+    }
+    .pricing-plan{
+      flex: 1;
+      flex-basis: 300px;  /*Note this flex-basis size is ignored bcoz we have a max-width value*/
+      max-width: 400px; /*this means that the maximum height this div can grow into is 400px starting from the 
+      flex basis above which is 300px...*/
+      padding: 20px;
+      border-radius: 20px;
+      text-align: center;
+    }
+    .plan-title{
+      background-color: #eb0f67 ;
+      color: white;
+      padding: 10px;
+      border-radius: 30px 30px 0px 0px;
+      font-weight: bolder;
+    }
+    .plan-price{
+       background-color: #ffd3db;
+       color: #eb0f67;
+       border-radius: 0px 0px 30px 30px;
+       padding: 20px;
+      font-weight: bolder;
+      font-size: 3rem;
+      box-shadow: 0px 4px 4px 0px rgb(227, 65, 65);
+    }
+    .plan-features{
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 0px;
+    }
+    li{
+      list-style-type: none;
+      padding: 10px 0px;
+    }
+    .plan-button{
+      background-color: orange;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 10px;
+      margin-top: 5px;
+      box-shadow: none;
+    }
+    /* Hint: What can you do with a media query and flexbox? */
+    @media (max-width: 1250px) {
+              .pricing-container{
+                          /*here am using flex methods to style it better*/
+                          flex-direction: column;
+                          height: 100%;
+            }
+
+               /* .pricing-plan{
+                  flex: 1;
+                         max-width: 50%;
+                          background-color: #fbcbc9
+                          
+            }*/
+    }
+  </style>
+</head>
+
+<body>
+  <div class="pricing-container">
+              <div class="pricing-plan">
+                        <div class="plan-title">Basic</div>
+                        <div class="plan-price">$9.99/month
+                                <ul class="plan-features">
+                                  <li>✅ 10GB Storage</li>
+                                  <li>✅ 1 User</li>
+                                  <li>🚫 Support</li>
+                              </ul>
+                              <button class="plan-button">Sign Up</button>
+                        </div>       
+              </div>
+
+              <div class="pricing-plan">
+                <div class="plan-title">Standard</div>
+                <div class="plan-price">$19.99/month
+                        <ul class="plan-features">
+                          <li>✅ 50GB Storage</li>
+                          <li>✅ 5 Users</li>
+                          <li>✅ Phone &amp; Email Support</li>
+                  </ul>
+                            <button class="plan-button">Sign Up</button>
+                      </div> 
+                    </div>      
+
+               <div class="pricing-plan">
+                <div class="plan-title">Premium</div>
+                <div class="plan-price">$49.99/month
+                          <ul class="plan-features">
+                            <li>✅ 100GB Storage</li>
+                            <li>✅ 10 Users</li>
+                            <li>✅ 24/7 Support</li>
+                          </ul>
+                              <button class="plan-button">Sign Up</button>
+                        </div>       
+                  </div>
+  </div>
+
+</body>
+
+</html>
