@@ -11,15 +11,16 @@
     body {
       font-family: 'Sono', sans-serif;
       font-size: 1.5rem;
+      background-color: #eb0f67;
     }
     .pricing-container{
       background-color: rgb(255, 214, 148);
       height: 100vh;
       display: flex; /*here am using flex methods to style it better*/
-      gap: 5px;
+      gap: 0px;
       flex-direction: row;
       justify-content: center;
-      align-items: center !important;
+      align-items: center;
       
       /*if i dont include this flex-wrap: wrap; code,  the boxes will always want to all be on a straight line and in doing
       that they go out of the container div and it dosent look great*/
@@ -71,19 +72,13 @@
       box-shadow: none;
     }
     /* Hint: What can you do with a media query and flexbox? */
-    @media (max-width: 1250px) {
-              .pricing-container{
-                          /*here am using flex methods to style it better*/
-                          flex-direction: column;
-                          height: 100%;
-            }
+      @media (max-width: 1050px) {
+          .pricing-container {
+            height: 100%;
+            flex-direction: column;
+            background-color: green;
 
-               /* .pricing-plan{
-                  flex: 1;
-                         max-width: 50%;
-                          background-color: #fbcbc9
-                          
-            }*/
+          }
     }
   </style>
 </head>
